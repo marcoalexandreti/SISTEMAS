@@ -1,0 +1,18 @@
+# Este arquivo usa a sintaxe portuguesa reconhecida pelo CPython modificado.
+função somar(primeiro, segundo):
+    retorne primeiro + segundo
+
+resultado = somar(2, 3)
+se resultado >= 20:
+    escreva("O resultado chegou a vinte")
+senão:
+    escreva("Resultado:", resultado)
+
+para numero em intervalo(1, 6):
+    se numero % 2 == 0:
+        escreva(numero, "é par")
+    senão:
+        escreva(numero, "é ímpar")
+
+# Strings e comentários permanecem exatamente como foram escritos.
+escreva("Texto preservado: se senão para função")

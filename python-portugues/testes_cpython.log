@@ -1,0 +1,15 @@
+Using random seed: 1631829638
+0:00:00 load avg: 1.04 Run 4 tests in parallel using 2 worker processes
+0:00:00 load avg: 1.04 [1/4] test_grammar passed
+0:00:00 load avg: 1.04 [2/4] test_builtin passed
+0:00:00 load avg: 1.04 [3/4] test_fstring passed
+0:00:02 load avg: 1.04 [4/4] test_import passed
+
+== Tests result: SUCCESS ==
+
+All 4 tests OK.
+
+Total duration: 2.5 sec
+Total tests: run=436 skipped=10
+Total test files: run=4/4
+Result: SUCCESS

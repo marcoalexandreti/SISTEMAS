@@ -1,0 +1,21 @@
+test_arquivo_ingles (__main__.PortuguesNativo.test_arquivo_ingles) ... ok
+test_ascii_e_lacos (__main__.PortuguesNativo.test_ascii_e_lacos) ... ok
+test_ast_e_posicoes (__main__.PortuguesNativo.test_ast_e_posicoes) ... ok
+test_async (__main__.PortuguesNativo.test_async) ... ok
+test_booleanos (__main__.PortuguesNativo.test_booleanos) ... ok
+test_classe (__main__.PortuguesNativo.test_classe) ... ok
+test_contexto_arquivo (__main__.PortuguesNativo.test_contexto_arquivo) ... ok
+test_enquanto (__main__.PortuguesNativo.test_enquanto) ... ok
+test_entrada (__main__.PortuguesNativo.test_entrada) ... ok
+test_erro_indica_linha_original (__main__.PortuguesNativo.test_erro_indica_linha_original) ... ok
+test_excecoes (__main__.PortuguesNativo.test_excecoes) ... ok
+test_funcao_condicao (__main__.PortuguesNativo.test_funcao_condicao) ... ok
+test_gerador (__main__.PortuguesNativo.test_gerador) ... ok
+test_stdlib_preservada (__main__.PortuguesNativo.test_stdlib_preservada) ... ok
+test_strings_comentarios_e_fstrings (__main__.PortuguesNativo.test_strings_comentarios_e_fstrings) ... ok
+test_tipos_e_colecoes (__main__.PortuguesNativo.test_tipos_e_colecoes) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.207s
+
+OK

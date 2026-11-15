@@ -1,0 +1,303 @@
+--- a/Parser/pegen.c
++++ b/Parser/pegen.c
+@@ -178,12 +178,98 @@
+     return NAME;
+ }
+ 
++/* PYTHON_PT_NATIVE_KEYWORDS: português apenas em arquivos .ptpy. */
++static int
++_python_pt_source(Parser *p)
++{
++    PyObject *filename = p->tok->filename;
++    if (filename == NULL || !PyUnicode_Check(filename)) return 0;
++    Py_ssize_t length = PyUnicode_GET_LENGTH(filename);
++    const char *suffix = ".ptpy";
++    if (length < 5) return 0;
++    for (int i = 0; i < 5; i++) {
++        if (PyUnicode_READ_CHAR(filename, length - 5 + i) != (unsigned char)suffix[i])
++            return 0;
++    }
++    return 1;
++}
++
++static const char *
++_python_pt_keyword(const char *text, Py_ssize_t length)
++{
++    static const struct { const char *pt; const char *en; } words[] = {
++        {"Falso", "False"},
++        {"Nenhum", "None"},
++        {"Verdadeiro", "True"},
++        {"e", "and"},
++        {"como", "as"},
++        {"afirme", "assert"},
++        {"ass\303\255ncrono", "async"},
++        {"assincrono", "async"},
++        {"aguarde", "await"},
++        {"interrompa", "break"},
++        {"classe", "class"},
++        {"continue", "continue"},
++        {"fun\303\247\303\243o", "def"},
++        {"funcao", "def"},
++        {"defina", "def"},
++        {"apague", "del"},
++        {"sen\303\243ose", "elif"},
++        {"senaose", "elif"},
++        {"sen\303\243o", "else"},
++        {"senao", "else"},
++        {"exceto", "except"},
++        {"finalmente", "finally"},
++        {"para", "for"},
++        {"de", "from"},
++        {"global", "global"},
++        {"se", "if"},
++        {"importe", "import"},
++        {"em", "in"},
++        {"\303\251", "is"},
++        {"eh", "is"},
++        {"lambda", "lambda"},
++        {"n\303\243olocal", "nonlocal"},
++        {"naolocal", "nonlocal"},
++        {"n\303\243o", "not"},
++        {"nao", "not"},
++        {"ou", "or"},
++        {"passe", "pass"},
++        {"lance", "raise"},
++        {"retorne", "return"},
++        {"tente", "try"},
++        {"enquanto", "while"},
++        {"com", "with"},
++        {"produza", "yield"},
++        {NULL, NULL}
++    };
++    for (int i = 0; words[i].pt != NULL; i++) {
++        if ((Py_ssize_t)strlen(words[i].pt) == length &&
++            memcmp(words[i].pt, text, (size_t)length) == 0)
++            return words[i].en;
++    }
++    return NULL;
++}
++
+ static int
+ initialize_token(Parser *p, Token *parser_token, struct token *new_token, int token_type) {
+     assert(parser_token != NULL);
+ 
+-    parser_token->type = (token_type == NAME) ? _get_keyword_or_name_type(p, new_token) : token_type;
+-    parser_token->bytes = PyBytes_FromStringAndSize(new_token->start, new_token->end - new_token->start);
++    const char *text = new_token->start;
++    Py_ssize_t text_length = new_token->end - new_token->start;
++    struct token translated = *new_token;
++    if (token_type == NAME && _python_pt_source(p)) {
++        const char *english = _python_pt_keyword(text, text_length);
++        if (english != NULL) {
++            text = english;
++            text_length = (Py_ssize_t)strlen(english);
++            translated.start = text;
++            translated.end = text + text_length;
++            translated.end_col_offset = translated.col_offset + (int)text_length;
++        }
++    }
++    parser_token->type = (token_type == NAME) ? _get_keyword_or_name_type(p, &translated) : token_type;
++    parser_token->bytes = PyBytes_FromStringAndSize(text, text_length);
+     if (parser_token->bytes == NULL) {
+         return -1;
+     }
+--- a/Python/bltinmodule.c
++++ b/Python/bltinmodule.c
+@@ -3493,6 +3493,197 @@
+     SETBUILTIN("tuple",                 &PyTuple_Type);
+     SETBUILTIN("type",                  &PyType_Type);
+     SETBUILTIN("zip",                   &PyZip_Type);
++
++    /* PYTHON_PT_NATIVE_BUILTINS: aliases, sem remover a API original. */
++    {
++        PyObject *alias = PyDict_GetItemString(dict, "print");
++        if (alias == NULL) {
++            PyErr_SetString(PyExc_RuntimeError, "Missing Portuguese builtin target");
++            return NULL;
++        }
++        SETBUILTIN("escreva", alias);
++    }
++    {
++        PyObject *alias = PyDict_GetItemString(dict, "input");
++        if (alias == NULL) {
++            PyErr_SetString(PyExc_RuntimeError, "Missing Portuguese builtin target");
++            return NULL;
++        }
++        SETBUILTIN("leia", alias);
++    }
++    {
++        PyObject *alias = PyDict_GetItemString(dict, "int");
++        if (alias == NULL) {
++            PyErr_SetString(PyExc_RuntimeError, "Missing Portuguese builtin target");
++            return NULL;
++        }
++        SETBUILTIN("inteiro", alias);
++    }
++    {
++        PyObject *alias = PyDict_GetItemString(dict, "float");
++        if (alias == NULL) {
++            PyErr_SetString(PyExc_RuntimeError, "Missing Portuguese builtin target");
++            return NULL;
++        }
++        SETBUILTIN("real", alias);
++    }
++    {
++        PyObject *alias = PyDict_GetItemString(dict, "str");
++        if (alias == NULL) {
++            PyErr_SetString(PyExc_RuntimeError, "Missing Portuguese builtin target");
++            return NULL;
++        }
++        SETBUILTIN("texto", alias);
++    }
++    {
++        PyObject *alias = PyDict_GetItemString(dict, "bool");
++        if (alias == NULL) {
++            PyErr_SetString(PyExc_RuntimeError, "Missing Portuguese builtin target");
++            return NULL;
++        }
++        SETBUILTIN("booleano", alias);
++    }
++    {
++        PyObject *alias = PyDict_GetItemString(dict, "list");
++        if (alias == NULL) {
++            PyErr_SetString(PyExc_RuntimeError, "Missing Portuguese builtin target");
++            return NULL;
++        }
++        SETBUILTIN("lista", alias);
++    }
++    {
++        PyObject *alias = PyDict_GetItemString(dict, "tuple");
++        if (alias == NULL) {
++            PyErr_SetString(PyExc_RuntimeError, "Missing Portuguese builtin target");
++            return NULL;
++        }
++        SETBUILTIN("tupla", alias);
++    }
++    {
++        PyObject *alias = PyDict_GetItemString(dict, "dict");
++        if (alias == NULL) {
++            PyErr_SetString(PyExc_RuntimeError, "Missing Portuguese builtin target");
++            return NULL;
++        }
++        SETBUILTIN("dicion\303\241rio", alias);
++    }
++    {
++        PyObject *alias = PyDict_GetItemString(dict, "dict");
++        if (alias == NULL) {
++            PyErr_SetString(PyExc_RuntimeError, "Missing Portuguese builtin target");
++            return NULL;
++        }
++        SETBUILTIN("dicionario", alias);
++    }
++    {
++        PyObject *alias = PyDict_GetItemString(dict, "set");
++        if (alias == NULL) {
++            PyErr_SetString(PyExc_RuntimeError, "Missing Portuguese builtin target");
++            return NULL;
++        }
++        SETBUILTIN("conjunto", alias);
++    }
++    {
++        PyObject *alias = PyDict_GetItemString(dict, "range");
++        if (alias == NULL) {
++            PyErr_SetString(PyExc_RuntimeError, "Missing Portuguese builtin target");
++            return NULL;
++        }
++        SETBUILTIN("intervalo", alias);
++    }
++    {
++        PyObject *alias = PyDict_GetItemString(dict, "len");
++        if (alias == NULL) {
++            PyErr_SetString(PyExc_RuntimeError, "Missing Portuguese builtin target");
++            return NULL;
++        }
++        SETBUILTIN("tamanho", alias);
++    }
++    {
++        PyObject *alias = PyDict_GetItemString(dict, "sum");
++        if (alias == NULL) {
++            PyErr_SetString(PyExc_RuntimeError, "Missing Portuguese builtin target");
++            return NULL;
++        }
++        SETBUILTIN("soma", alias);
++    }
++    {
++        PyObject *alias = PyDict_GetItemString(dict, "min");
++        if (alias == NULL) {
++            PyErr_SetString(PyExc_RuntimeError, "Missing Portuguese builtin target");
++            return NULL;
++        }
++        SETBUILTIN("m\303\255nimo", alias);
++    }
++    {
++        PyObject *alias = PyDict_GetItemString(dict, "min");
++        if (alias == NULL) {
++            PyErr_SetString(PyExc_RuntimeError, "Missing Portuguese builtin target");
++            return NULL;
++        }
++        SETBUILTIN("minimo", alias);
++    }
++    {
++        PyObject *alias = PyDict_GetItemString(dict, "max");
++        if (alias == NULL) {
++            PyErr_SetString(PyExc_RuntimeError, "Missing Portuguese builtin target");
++            return NULL;
++        }
++        SETBUILTIN("m\303\241ximo", alias);
++    }
++    {
++        PyObject *alias = PyDict_GetItemString(dict, "max");
++        if (alias == NULL) {
++            PyErr_SetString(PyExc_RuntimeError, "Missing Portuguese builtin target");
++            return NULL;
++        }
++        SETBUILTIN("maximo", alias);
++    }
++    {
++        PyObject *alias = PyDict_GetItemString(dict, "abs");
++        if (alias == NULL) {
++            PyErr_SetString(PyExc_RuntimeError, "Missing Portuguese builtin target");
++            return NULL;
++        }
++        SETBUILTIN("absoluto", alias);
++    }
++    {
++        PyObject *alias = PyDict_GetItemString(dict, "round");
++        if (alias == NULL) {
++            PyErr_SetString(PyExc_RuntimeError, "Missing Portuguese builtin target");
++            return NULL;
++        }
++        SETBUILTIN("arredonde", alias);
++    }
++    {
++        PyObject *alias = PyDict_GetItemString(dict, "enumerate");
++        if (alias == NULL) {
++            PyErr_SetString(PyExc_RuntimeError, "Missing Portuguese builtin target");
++            return NULL;
++        }
++        SETBUILTIN("enumere", alias);
++    }
++    {
++        PyObject *alias = PyDict_GetItemString(dict, "sorted");
++        if (alias == NULL) {
++            PyErr_SetString(PyExc_RuntimeError, "Missing Portuguese builtin target");
++            return NULL;
++        }
++        SETBUILTIN("ordenado", alias);
++    }
++    {
++        PyObject *alias = PyDict_GetItemString(dict, "type");
++        if (alias == NULL) {
++            PyErr_SetString(PyExc_RuntimeError, "Missing Portuguese builtin target");
++            return NULL;
++        }
++        SETBUILTIN("tipo", alias);
++    }
++    SETBUILTIN("ErroDeValor", PyExc_ValueError);
++    SETBUILTIN("ErroDeTipo", PyExc_TypeError);
++    SETBUILTIN("ErroDeDivisaoPorZero", PyExc_ZeroDivisionError);
++    SETBUILTIN("Excecao", PyExc_Exception);
++
+     debug = PyBool_FromLong(config->optimization_level == 0);
+     if (PyDict_SetItemString(dict, "__debug__", debug) < 0) {
+         Py_DECREF(debug);
