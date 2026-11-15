@@ -1,0 +1,48 @@
+{
+  "formato": "lume-ide",
+  "versao": 1,
+  "blocos": [
+    {
+      "tipo": "entrada",
+      "campos": {
+        "nome": "numero",
+        "mensagem": "Digite um número inteiro: ",
+        "tipo": "inteiro"
+      },
+      "filhos": [],
+      "senao": [],
+      "id": "97a78b3b0d9f"
+    },
+    {
+      "tipo": "condicao",
+      "campos": {
+        "condicao": "numero % 2 == 0"
+      },
+      "filhos": [
+        {
+          "tipo": "saida",
+          "campos": {
+            "expressao": "\"Número par\""
+          },
+          "filhos": [],
+          "senao": [],
+          "id": "23e7508e54da"
+        }
+      ],
+      "senao": [
+        {
+          "tipo": "saida",
+          "campos": {
+            "expressao": "\"Número ímpar\""
+          },
+          "filhos": [],
+          "senao": [],
+          "id": "f97294a303c0"
+        }
+      ],
+      "id": "5d0e14cc1502"
+    }
+  ],
+  "codigo": "# Programa criado na Lume IDE\n\nnumero = inteiro(leia('Digite um número inteiro: '))\nse numero % 2 == 0:\n    escreva(\"Número par\")\nsenão:\n    escreva(\"Número ímpar\")\n",
+  "edicao_manual": false
+}

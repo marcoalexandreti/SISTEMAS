@@ -2,7 +2,16 @@
 
 Extensão experimental do CPython 3.14.10 com palavras-chave em português em arquivos `.ptpy`.
 
-## Baixar
+## IDE visual em português
+
+A **Lume IDE** oferece sugestões ao digitar comandos e funções, montagem de programas com formas geométricas arrastáveis, editor com cores e console interativo.
+
+- [Baixar a IDE](https://github.com/marcoalexandreti/SISTEMAS/raw/refs/heads/main/python-portugues/Lume_IDE_Portugues.zip)
+- [Ver instruções e capturas de tela](ide/README.md)
+
+Para abrir no Windows, extraia o ZIP e execute `iniciar_ide.bat` com Python 3.12+ instalado. Não é necessário compilar o CPython para usar a execução integrada.
+
+## Baixar o interpretador nativo
 
 [Baixar o pacote completo (ZIP, aproximadamente 24 MB)](https://github.com/marcoalexandreti/SISTEMAS/raw/refs/heads/main/python-portugues/Python_em_Portugues_Prototipo.zip)
 

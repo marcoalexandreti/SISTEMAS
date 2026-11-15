@@ -1,0 +1,47 @@
+{
+  "formato": "lume-ide",
+  "versao": 1,
+  "blocos": [
+    {
+      "tipo": "funcao",
+      "campos": {
+        "nome": "somar",
+        "parametros": "a, b"
+      },
+      "filhos": [
+        {
+          "tipo": "retorno",
+          "campos": {
+            "expressao": "a + b"
+          },
+          "filhos": [],
+          "senao": [],
+          "id": "bd803c1d23ac"
+        }
+      ],
+      "senao": [],
+      "id": "513882c864ba"
+    },
+    {
+      "tipo": "variavel",
+      "campos": {
+        "nome": "resultado",
+        "valor": "somar(2, 3)"
+      },
+      "filhos": [],
+      "senao": [],
+      "id": "c0918b56ad1c"
+    },
+    {
+      "tipo": "saida",
+      "campos": {
+        "expressao": "\"Resultado:\", resultado"
+      },
+      "filhos": [],
+      "senao": [],
+      "id": "cd5f415167af"
+    }
+  ],
+  "codigo": "# Programa criado na Lume IDE\n\nfunção somar(a, b):\n    retorne a + b\nresultado = somar(2, 3)\nescreva(\"Resultado:\", resultado)\n",
+  "edicao_manual": false
+}

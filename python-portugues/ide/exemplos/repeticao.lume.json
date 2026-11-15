@@ -1,0 +1,30 @@
+{
+  "formato": "lume-ide",
+  "versao": 1,
+  "blocos": [
+    {
+      "tipo": "repetir",
+      "campos": {
+        "variavel": "numero",
+        "inicio": "1",
+        "fim": "6",
+        "passo": "1"
+      },
+      "filhos": [
+        {
+          "tipo": "saida",
+          "campos": {
+            "expressao": "numero, \"ao quadrado =\", numero ** 2"
+          },
+          "filhos": [],
+          "senao": [],
+          "id": "00c06e947e32"
+        }
+      ],
+      "senao": [],
+      "id": "f6203cd62a7a"
+    }
+  ],
+  "codigo": "# Programa criado na Lume IDE\n\npara numero em intervalo(1, 6, 1):\n    escreva(numero, \"ao quadrado =\", numero ** 2)\n",
+  "edicao_manual": false
+}

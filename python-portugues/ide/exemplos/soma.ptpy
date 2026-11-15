@@ -1,0 +1,9 @@
+# Programa criado na Lume IDE
+
+a = 2
+b = 3
+soma = a + b
+se soma >= 20:
+    escreva("Chegou a vinte")
+senão:
+    escreva("Resultado:", soma)

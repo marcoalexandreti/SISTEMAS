@@ -1,0 +1,6 @@
+# Programa criado na Lume IDE
+
+função somar(a, b):
+    retorne a + b
+resultado = somar(2, 3)
+escreva("Resultado:", resultado)

@@ -1,0 +1,7 @@
+"""Vocabulário compartilhado pela IDE e pelo executor compatível."""
+
+PALAVRAS = {'Falso': 'False', 'Nenhum': 'None', 'Verdadeiro': 'True', 'e': 'and', 'como': 'as', 'afirme': 'assert', 'assíncrono': 'async', 'assincrono': 'async', 'aguarde': 'await', 'interrompa': 'break', 'classe': 'class', 'continue': 'continue', 'função': 'def', 'funcao': 'def', 'defina': 'def', 'apague': 'del', 'senãose': 'elif', 'senaose': 'elif', 'senão': 'else', 'senao': 'else', 'exceto': 'except', 'finalmente': 'finally', 'para': 'for', 'de': 'from', 'global': 'global', 'se': 'if', 'importe': 'import', 'em': 'in', 'é': 'is', 'eh': 'is', 'lambda': 'lambda', 'nãolocal': 'nonlocal', 'naolocal': 'nonlocal', 'não': 'not', 'nao': 'not', 'ou': 'or', 'passe': 'pass', 'lance': 'raise', 'retorne': 'return', 'tente': 'try', 'enquanto': 'while', 'com': 'with', 'produza': 'yield'}
+
+FUNCOES = {'escreva': 'print', 'leia': 'input', 'inteiro': 'int', 'real': 'float', 'texto': 'str', 'booleano': 'bool', 'lista': 'list', 'tupla': 'tuple', 'dicionário': 'dict', 'dicionario': 'dict', 'conjunto': 'set', 'intervalo': 'range', 'tamanho': 'len', 'soma': 'sum', 'mínimo': 'min', 'minimo': 'min', 'máximo': 'max', 'maximo': 'max', 'absoluto': 'abs', 'arredonde': 'round', 'enumere': 'enumerate', 'ordenado': 'sorted', 'tipo': 'type'}
+
+EXCECOES = {"ErroDeValor": "ValueError", "ErroDeTipo": "TypeError", "ErroDeDivisaoPorZero": "ZeroDivisionError", "Excecao": "Exception"}

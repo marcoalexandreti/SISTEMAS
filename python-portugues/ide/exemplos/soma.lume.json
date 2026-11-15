@@ -1,0 +1,67 @@
+{
+  "formato": "lume-ide",
+  "versao": 1,
+  "blocos": [
+    {
+      "tipo": "variavel",
+      "campos": {
+        "nome": "a",
+        "valor": "2"
+      },
+      "filhos": [],
+      "senao": [],
+      "id": "be94f30a49cf"
+    },
+    {
+      "tipo": "variavel",
+      "campos": {
+        "nome": "b",
+        "valor": "3"
+      },
+      "filhos": [],
+      "senao": [],
+      "id": "eeeae9c80375"
+    },
+    {
+      "tipo": "variavel",
+      "campos": {
+        "nome": "soma",
+        "valor": "a + b"
+      },
+      "filhos": [],
+      "senao": [],
+      "id": "0fb63b159a05"
+    },
+    {
+      "tipo": "condicao",
+      "campos": {
+        "condicao": "soma >= 20"
+      },
+      "filhos": [
+        {
+          "tipo": "saida",
+          "campos": {
+            "expressao": "\"Chegou a vinte\""
+          },
+          "filhos": [],
+          "senao": [],
+          "id": "359ec1fb2a85"
+        }
+      ],
+      "senao": [
+        {
+          "tipo": "saida",
+          "campos": {
+            "expressao": "\"Resultado:\", soma"
+          },
+          "filhos": [],
+          "senao": [],
+          "id": "e69f694ddfa3"
+        }
+      ],
+      "id": "743ff8b61e34"
+    }
+  ],
+  "codigo": "# Programa criado na Lume IDE\n\na = 2\nb = 3\nsoma = a + b\nse soma >= 20:\n    escreva(\"Chegou a vinte\")\nsenão:\n    escreva(\"Resultado:\", soma)\n",
+  "edicao_manual": false
+}

@@ -1,0 +1,4 @@
+# Programa criado na Lume IDE
+
+para numero em intervalo(1, 6, 1):
+    escreva(numero, "ao quadrado =", numero ** 2)

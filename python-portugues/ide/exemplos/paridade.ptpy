@@ -1,0 +1,7 @@
+# Programa criado na Lume IDE
+
+numero = inteiro(leia('Digite um número inteiro: '))
+se numero % 2 == 0:
+    escreva("Número par")
+senão:
+    escreva("Número ímpar")

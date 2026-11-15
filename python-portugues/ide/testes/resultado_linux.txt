@@ -1,0 +1,39 @@
+test_alterar_blocos_preserva_edicao_manual (test_interface.Interface.test_alterar_blocos_preserva_edicao_manual) ... ok
+test_arrastar_bloco_existente_reordena (test_interface.Interface.test_arrastar_bloco_existente_reordena) ... ok
+test_arrastar_forma_cria_bloco (test_interface.Interface.test_arrastar_forma_cria_bloco) ... ok
+test_autocompletar_com_tab (test_interface.Interface.test_autocompletar_com_tab) ... ok
+test_console_e_entrada_visiveis_na_janela (test_interface.Interface.test_console_e_entrada_visiveis_na_janela) ... ok
+test_desfazer_e_refazer (test_interface.Interface.test_desfazer_e_refazer) ... ok
+test_encaixar_dentro_da_condicao (test_interface.Interface.test_encaixar_dentro_da_condicao) ... ok
+test_execucao_interativa_no_console (test_interface.Interface.test_execucao_interativa_no_console) ... ok
+test_parar_programa_com_repeticao_infinita (test_interface.Interface.test_parar_programa_com_repeticao_infinita) ... ok
+test_propriedades_tem_rolagem_em_janela_menor (test_interface.Interface.test_propriedades_tem_rolagem_em_janela_menor) ... ok
+test_salvar_e_reabrir_preserva_blocos_e_texto (test_interface.Interface.test_salvar_e_reabrir_preserva_blocos_e_texto) ... ok
+test_sugestoes_aparecem_ao_digitar (test_interface.Interface.test_sugestoes_aparecem_ao_digitar) ... ok
+test_aninhamento_condicao_em_repeticao (test_programas.Programas.test_aninhamento_condicao_em_repeticao) ... ok
+test_biblioteca_matematica_em_portugues (test_programas.Programas.test_biblioteca_matematica_em_portugues) ... ok
+test_corpo_com_apenas_comentario (test_programas.Programas.test_corpo_com_apenas_comentario) ... ok
+test_duplicacao_identidades_independentes (test_programas.Programas.test_duplicacao_identidades_independentes) ... ok
+test_erro_de_execucao_informa_linha (test_programas.Programas.test_erro_de_execucao_informa_linha) ... ok
+test_erro_de_sintaxe_informa_linha (test_programas.Programas.test_erro_de_sintaxe_informa_linha) ... ok
+test_expressoes_em_fstrings (test_programas.Programas.test_expressoes_em_fstrings) ... ok
+test_funcao_retornando_valor (test_programas.Programas.test_funcao_retornando_valor) ... ok
+test_impede_ciclo_sem_perder_blocos (test_programas.Programas.test_impede_ciclo_sem_perder_blocos) ... ok
+test_interromper_fora_de_laco (test_programas.Programas.test_interromper_fora_de_laco) ... ok
+test_mesmo_programa_no_interpretador_nativo (test_programas.Programas.test_mesmo_programa_no_interpretador_nativo) ... ok
+test_movimento_entre_ramos_preserva_conteudo (test_programas.Programas.test_movimento_entre_ramos_preserva_conteudo) ... ok
+test_movimento_na_mesma_lista (test_programas.Programas.test_movimento_na_mesma_lista) ... ok
+test_nomes_invalidos_e_palavras_reservadas (test_programas.Programas.test_nomes_invalidos_e_palavras_reservadas) ... ok
+test_paridade_recebe_inteiros (test_programas.Programas.test_paridade_recebe_inteiros) ... ok
+test_passos_zero_sao_rejeitados (test_programas.Programas.test_passos_zero_sao_rejeitados) ... ok
+test_projeto_corrompido_nao_e_aceito (test_programas.Programas.test_projeto_corrompido_nao_e_aceito) ... ok
+test_repeticao_limite_exclusivo (test_programas.Programas.test_repeticao_limite_exclusivo) ... ok
+test_retorno_fora_de_funcao (test_programas.Programas.test_retorno_fora_de_funcao) ... ok
+test_soma_e_decisao (test_programas.Programas.test_soma_e_decisao) ... ok
+test_sugestao_ignora_acentos (test_programas.Programas.test_sugestao_ignora_acentos) ... ok
+test_textos_nao_sao_traduzidos (test_programas.Programas.test_textos_nao_sao_traduzidos) ... ok
+
+----------------------------------------------------------------------
+Ran 34 tests in 1.284s
+
+OK
