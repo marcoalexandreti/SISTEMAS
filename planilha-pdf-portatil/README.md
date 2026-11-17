@@ -4,7 +4,7 @@ Aplicativo Java de desktop para **importar uma planilha e gerar automaticamente 
 
 ## Baixar e executar no pendrive
 
-**[Baixar o pacote Windows x64, com Java incluído](https://github.com/marcoalexandreti/SISTEMAS/releases/download/planilhapdf-v1.0.0/PlanilhaPDF_Portatil_Windows_x64.zip)**
+**[Baixar o pacote Windows x64, com Java incluído](https://github.com/marcoalexandreti/SISTEMAS/raw/refs/heads/main/planilha-pdf-portatil/PlanilhaPDF_Portatil_Windows_x64.zip)**
 
 1. Extraia **todo o ZIP** para o pendrive ou uma pasta do computador.
 2. Abra **`Iniciar.bat`**.

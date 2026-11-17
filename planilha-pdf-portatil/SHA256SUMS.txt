@@ -1,0 +1,2 @@
+6c0181e7f760d3fdf44bcac20035ca8dbcd7cd045ff72a31d1a4fea77e76a2f4  PlanilhaPDF_Portatil_Windows_x64.zip
+302cd8d53b8ce054ab66a1c0144e9dd6911dc5c0591be3d4ce9b11ee747a8a23  PlanilhaPDF_Codigo_Fonte.zip
