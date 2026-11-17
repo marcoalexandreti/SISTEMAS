@@ -1,0 +1,3 @@
+*.bat text eol=crlf
+*.csv text eol=crlf
+src/main/resources/fonts/LICENCA-DejaVu.txt -whitespace

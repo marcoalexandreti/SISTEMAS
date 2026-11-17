@@ -1,0 +1,16 @@
+{
+  "completo": {
+    "registros": 95,
+    "colunas_origem": 11,
+    "paginas": 5,
+    "campos_ou_ocorrencias_ausentes": 0,
+    "textos_fora_da_pagina": 0
+  },
+  "conferencia": {
+    "registros": 95,
+    "colunas_origem": 7,
+    "paginas": 8,
+    "campos_ou_ocorrencias_ausentes": 0,
+    "textos_fora_da_pagina": 0
+  }
+}

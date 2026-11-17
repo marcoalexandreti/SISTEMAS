@@ -1,0 +1,10 @@
+﻿;;;;;;;;;;Relatório fictício para demonstração
+Ano/Período;UF;Município;NIS;CPF;Nome do Aluno;Data de Nascimento;Nome do Responsável;NIS Responsável;Situação;Tipo Acompanhamento
+2026(October/November);PA;Município de Exemplo;00000000001;00000000101;ALUNO FICTÍCIO DE EXEMPLO 01;10/11/2017;RESPONSÁVEL FICTÍCIO 01;00000000201;NLOC - Aluno não localizado;6 a 18 anos incompletos (75%)
+2026(October/November);PA;Município de Exemplo;00000000002;00000000102;ALUNO FICTÍCIO DE EXEMPLO 02;10/11/2017;RESPONSÁVEL FICTÍCIO 02;00000000202;NLOC - Aluno não localizado;6 a 18 anos incompletos (75%)
+2026(October/November);PA;Município de Exemplo;00000000003;;ALUNO FICTÍCIO DE EXEMPLO 03;10/11/2017;RESPONSÁVEL FICTÍCIO 03;00000000203;NLOC - Aluno não localizado;6 a 18 anos incompletos (75%)
+2026(October/November);PA;Município de Exemplo;00000000004;00000000104;ALUNO FICTÍCIO DE EXEMPLO 04;10/11/2017;RESPONSÁVEL FICTÍCIO 04;00000000204;NLOC - Aluno não localizado;6 a 18 anos incompletos (75%)
+2026(October/November);PA;Município de Exemplo;00000000005;00000000105;ALUNO FICTÍCIO DE EXEMPLO 05;10/11/2017;RESPONSÁVEL FICTÍCIO 05;00000000205;NLOC - Aluno não localizado;6 a 18 anos incompletos (75%)
+2026(October/November);PA;Município de Exemplo;00000000006;;ALUNO FICTÍCIO DE EXEMPLO 06;10/11/2017;RESPONSÁVEL FICTÍCIO 06;00000000206;NLOC - Aluno não localizado;6 a 18 anos incompletos (75%)
+2026(October/November);PA;Município de Exemplo;00000000007;00000000107;ALUNO FICTÍCIO DE EXEMPLO 07;10/11/2017;RESPONSÁVEL FICTÍCIO 07;00000000207;NLOC - Aluno não localizado;6 a 18 anos incompletos (75%)
+2026(October/November);PA;Município de Exemplo;00000000008;00000000108;ALUNO FICTÍCIO DE EXEMPLO 08;10/11/2017;RESPONSÁVEL FICTÍCIO 08;00000000208;NLOC - Aluno não localizado;6 a 18 anos incompletos (75%)

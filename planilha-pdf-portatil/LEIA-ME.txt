@@ -1,0 +1,61 @@
+﻿PLANILHAPDF PORTÁTIL — WINDOWS X64
+
+COMO USAR
+1. Extraia TODOS os arquivos do ZIP para o pendrive ou uma pasta do computador.
+2. Abra Iniciar.bat. Não abra o programa de dentro do ZIP.
+3. Clique em Importar e gerar PDF e escolha o CSV, XLSX ou XLS.
+4. O PDF será gerado automaticamente na pasta Relatorios, junto do programa.
+
+O Java já está incluído. Não é necessário instalar Java, Maven ou outras
+bibliotecas. O processamento é local e não precisa de internet.
+Requisitos: Windows 10/11 de 64 bits, espaço para extrair o pacote, pasta de
+destino gravável e um leitor de PDF para abrir o documento automaticamente.
+Mantenha a pasta runtime junto de PlanilhaPDF.jar. Aguarde concluir antes de
+retirar o pendrive.
+
+MODELOS
+- Completo: inclui todas as colunas da planilha. Com 10 ou mais colunas,
+  Automático escolhe A3 horizontal para preservar a legibilidade.
+- Conferência: organiza Nome do Aluno, NIS, CPF, Data de Nascimento,
+  Nome do Responsável, NIS Responsável e Tipo Acompanhamento, acrescentando
+  Observação. Corresponde à estrutura do PDF de referência.
+- Para imprimir em impressora A4, selecione A4 horizontal e clique em
+  Gerar novamente. Todas as colunas selecionadas são mantidas, com mais
+  quebras de linha e páginas quando necessário.
+- Você também pode marcar/desmarcar colunas, ajustar a fonte e a ordem.
+
+O total é calculado a partir da planilha efetivamente importada.
+Campos vazios permanecem vazios. CPF e NIS são tratados como texto.
+As datas do CSV são preservadas; datas reconhecidas no Excel são exibidas
+com ano completo. Zeros que já foram perdidos no arquivo Excel não podem
+ser adivinhados: use o formato de célula apropriado ou exporte para CSV.
+O programa não altera nem recalcula a planilha original.
+
+CSV: detecta separador ponto e vírgula, vírgula ou tabulação; aceita UTF-8,
+UTF-16 com BOM e Windows-1252. Ignora as linhas iniciais de identificação
+quando localiza o cabeçalho da tabela de alunos.
+Excel: utiliza a primeira aba visível com dados. Fórmulas usam os valores
+calculados que estavam salvos no arquivo; salve a planilha no Excel antes
+de importar. Macros não são executadas.
+Limites: 80 MB por arquivo, 100 mil linhas e até 18 colunas por PDF.
+Os relatórios devem ser tratados conforme as regras de proteção de dados
+da instituição. O exemplo incluído é inteiramente fictício.
+
+SE NÃO ABRIR
+- Confirme que o ZIP foi extraído por completo.
+- Confira se o Windows é de 64 bits.
+- Use Diagnosticar.bat para ver mensagens de inicialização.
+- Se o pendrive estiver protegido contra escrita, escolha outra pasta.
+- O programa não precisa de acesso de administrador.
+
+VALIDAÇÃO
+13 testes automatizados passaram em Linux. O CSV fornecido pelo solicitante
+foi validado com 95 registros e 11 colunas: modo completo A3 com 5 páginas
+e conferência A4 com 8 páginas. Não foram encontrados campos ausentes ou
+texto fora das margens na verificação por coluna desses documentos.
+Dados reais de alunos e PDFs reais não acompanham este pacote público.
+O runtime Windows x64 foi baixado da distribuição oficial Eclipse Temurin
+21.0.13+9 e teve seu SHA-256 conferido. A execução nativa em Windows ainda
+precisa ser validada no computador de destino.
+
+Licenças de terceiros estão em Licencas e runtime/legal.
